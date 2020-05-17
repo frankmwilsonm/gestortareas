@@ -26,7 +26,7 @@ public class Main {
                 case 1:
                     System.out.println("****** 1 Lista *****");
                     List<Person> lis = pData.list();
-                    System.out.println("ID \tName \t Sex");
+                    System.out.println("ID \tNombre \t Sexo");
                     for (Person d : lis) {
                         System.out.println(d.getId() + "\t" + d.getName() + "\t" + d.getSex());
                     }
