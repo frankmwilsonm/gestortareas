@@ -14,16 +14,16 @@ public class PersonDialog extends JDialog {
     private static final long serialVersionUID = 1L;
     JTextField fromField = new JTextField(" ", 30);
     JTextField toField = new JTextField(30);
-    JButton goButton = new JButton("Exit");
-    JButton addButton = new JButton("Add");
-    JButton delButton = new JButton("Remove");
+    JButton goButton = new JButton("Salir");
+    JButton addButton = new JButton("Agregar");
+    JButton delButton = new JButton("Eliminar");
     JTable jTable;
     JScrollPane jSP;
     PersonData personData = new PersonData();
 
     public PersonDialog() {
         setSize(500, 500);
-        setTitle("Person Dialog");
+        setTitle("Nueva tarea");
         setLocationRelativeTo(null);
 
         initForm();
@@ -46,14 +46,14 @@ public class PersonDialog extends JDialog {
         jTable.setModel(new DefaultTableModel(new Object[][] {
                 // { 1, 2 },
                 // { 3, 4 }
-        }, new String[] { "ID", "Name", "Sex" }));
+        }, new String[] { "ID", "Nombre", "Entregar" }));
         jSP = new JScrollPane();
         jSP.setViewportView(jTable);
 
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-        add(new JLabel("From:"));
+        add(new JLabel("Nombre de Tarea:"));
         add(fromField);
-        add(new JLabel("To:"));
+        add(new JLabel("Fecha a Entregar:"));
         add(toField);
         add(addButton);
         add(delButton);
@@ -82,7 +82,7 @@ public class PersonDialog extends JDialog {
     }
 
     void addPerson(ActionEvent e) {
-        System.out.println(" addButton has press ");
+        System.out.println(" Agregar.Button <presionado> ");
         Person d = new Person();
         d.setName(fromField.getText());
         d.setSex(toField.getText());
@@ -92,10 +92,10 @@ public class PersonDialog extends JDialog {
 
     void delPerson(ActionEvent e) {
         if (jTable.getSelectedRow() != -1) {
-            System.out.println(" delButton has press ");
+            System.out.println(" Eliminar.Button <presionado> ");
             int[] row = jTable.getSelectedRows();
             String ids = jTable.getValueAt(row[0], 0).toString();
-            System.out.println("selected: " + ids);
+            System.out.println("Se seleccionó: " + ids);
             int id = Integer.parseInt(ids);
             personData.delete(id);
             paintTable();

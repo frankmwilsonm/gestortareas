@@ -13,7 +13,7 @@ public class MainFrame extends JFrame implements ActionListener {
     public MainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 800);
-        setTitle("Main Frame");
+        setTitle("Gestor de Tareas");
         setLocationRelativeTo(null);
         initMenu();
     }
@@ -21,12 +21,13 @@ public class MainFrame extends JFrame implements ActionListener {
     void initMenu() {
         // menu
         JMenuBar mb = new JMenuBar();
-        JMenu m1 = new JMenu("File");
+        JMenu m1 = new JMenu("Archivo");
+       
 
-        m11 = new JMenuItem("New File");
+        m11 = new JMenuItem("Nueva Tarea");
         m11.addActionListener(this);
         m1.add(m11);
-        m19 = new JMenuItem("Exit");
+        m19 = new JMenuItem("Salir");
         m19.addActionListener(this);
         m1.add(m19);
 
@@ -38,12 +39,12 @@ public class MainFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == m11) {
-            System.out.println("Menu 1.1 has press ");
+            System.out.println("Menu 1.1  <presionado> ");
             PersonDialog personDialog = new PersonDialog();
             personDialog.setVisible(true);
         }
         if (e.getSource() == m19) {
-            System.out.println("By ");
+            System.out.println("By frank ");
             System.exit(0);
         }
     }
