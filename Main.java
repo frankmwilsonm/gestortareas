@@ -24,7 +24,7 @@ public class Main {
             input.nextLine(); // Limpiar el buffer
             switch (opt) {
                 case 1:
-                    System.out.println("****** 1 List *****");
+                    System.out.println("****** Lista *****");
                     List<Person> lis = pData.list();
                     System.out.println("ID \tName \t Sex");
                     for (Person d : lis) {
@@ -32,7 +32,7 @@ public class Main {
                     }
                     break;
                 case 2:
-                    System.out.println("**** 2 New ****");
+                    System.out.println("**** Nuevo ****");
                     Person d = new Person();
 
                     System.out.print("Ingrese Name: ");
@@ -43,7 +43,7 @@ public class Main {
                     pData.create(d);
                     break;
                 case 3:
-                    System.out.println("**** 3 Del ****");
+                    System.out.println("**** Eliminar ****");
                     System.out.print("Ingrese ID a eliminar: ");
                     pData.delete(input.nextInt());
                     input.nextLine();
